@@ -1,0 +1,28 @@
+minikube start --kubernetes-version=1.18.0
+./pro.sh
+kubectl get pods
+enter into the pod
+kubectl exec -it 
+- job_name: "pi3b-1"
+      static_configs:
+       - targets: ["10.250.61.29:9100"]
+- job_name: "pi3b-2"
+      static_configs:
+       - targets: ["10.250.61.37:9100"]
+minikube ssh
+docker ps 
+docker restart
+kubectl get pods
+port-forward
+./graf.sh
+kubectl get pods
+port-forward
+kubectl get pods -o wide
+add datasource
+import
+"(((count(count(node_cpu_seconds_total{instance="hostname",job="integrations/node_exporter"}) by (cpu))) - avg(sum by (mode)(rate(node_cpu_seconds_total{mode='idle',instance="hostname",job="integrations/node_exporter"}[$__rate_interval])))) * 100) / count(count(node_cpu_seconds_total{instance="hostname",job="integrations/node_exporter"}) by (cpu))"
+
+node_cpu_seconds_total{instance="hostname", job="integrations/node_exporter"}
+
+
+Expr: 100 - ((node_memory_MemAvailable_bytes{instance="hostname",job="integrations/node_exporter"} * 100) / node_memory_MemTotal_bytes{instance="hostname",job="integrations/node_exporter"})
